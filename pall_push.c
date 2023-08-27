@@ -28,15 +28,15 @@ void pall(stack_t **top, unsigned int count)
  */
 void push(stack_t **top, unsigned int count)
 {
-	int c, d = 0, flag = 0;
+	int a, b = 0, flag = 0;
 
 	if (bus.arg)
 	{
 		if (bus.arg[0] == '-')
-			d++;
-		for (; bus.arg[d] != '\0'; d++)
+			b++;
+		for (; bus.arg[b] != '\0'; b++)
 		{
-			if (bus.arg[d] > 57 || bus.arg[d] < 48)
+			if (bus.arg[b] > 57 || bus.arg[b] < 48)
 				flag = 1;
 		}
 		if (flag == 1)
@@ -56,9 +56,9 @@ void push(stack_t **top, unsigned int count)
 		free_stack(*top);
 		exit(EXIT_FAILURE);
 	}
-	c = atoi(bus.arg);
+	a = atoi(bus.arg);
 	if (bus.lifi == 0)
-		addnode(top, c);
+		addnode(top, a);
 	else
-		addqueue(top, c);
+		addqueue(top, a);
 }
